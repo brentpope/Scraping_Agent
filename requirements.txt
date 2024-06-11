@@ -1,4 +1,4 @@
-firecrawl-py
+firecrawl
 openai
 python-dotenv
 pandas

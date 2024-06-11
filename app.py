@@ -1,4 +1,4 @@
-from firecrawl import FirecrawlApp
+from Firecrawl import FirecrawlApp
 from openai import OpenAI
 from dotenv import load_dotenv
 import os 
@@ -13,7 +13,7 @@ def scrape_data(url):
     app = FirecrawlApp(api_key=os.getenv('FIRECRAWL_API_KEY'))
     
     # Scrape a single URL
-    scraped_data = app.scrape_url(url,{'pageOptions':{'onlyMainContent': True}})
+    scraped_data = app.scrape_url(url)
     
     # Check if 'markdown' key exists in the scraped data
     if 'markdown' in scraped_data:
@@ -116,7 +116,8 @@ def save_formatted_data(formatted_data, timestamp, output_folder='output'):
 
 if __name__ == "__main__":
     # Scrape a single URL
-    url = 'https://www.zillow.com/salt-lake-city-ut/'
+    #url = 'https://www.zillow.com/salt-lake-city-ut/'
+    url = 'https://www.redfin.com/county/1983/NY/Otsego-County/filter/sort=lo-price,property-type=land,include=sold-1mo'
     #url = 'https://www.trulia.com/CA/San_Francisco/'
     #url = 'https://www.seloger.com/immobilier/achat/immo-lyon-69/'
     
