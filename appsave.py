@@ -1,4 +1,4 @@
-from Firecrawl import FirecrawlApp
+from firecrawl import FirecrawlApp
 from openai import OpenAI
 from dotenv import load_dotenv
 import os 
@@ -117,8 +117,8 @@ def save_formatted_data(formatted_data, timestamp, output_folder='output'):
 if __name__ == "__main__":
     # Scrape a single URL
     #url = 'https://www.zillow.com/salt-lake-city-ut/'
-    url = 'https://www.redfin.com/county/1983/NY/Otsego-County/filter/sort=lo-price,property-type=land,include=sold-1mo'
-    #url = 'https://www.trulia.com/CA/San_Francisco/'
+    #url = 'https://www.redfin.com/county/1983/NY/Otsego-County/filter/sort=lo-price,property-type=land,include=sold-1mo'
+    url = 'https://www.trulia.com/CA/San_Francisco/'
     #url = 'https://www.seloger.com/immobilier/achat/immo-lyon-69/'
     
     try:
@@ -132,7 +132,7 @@ if __name__ == "__main__":
         save_raw_data(raw_data, timestamp)
         
         # Format data
-        formatted_data = format_data(raw_data,phone_fields)
+        formatted_data = format_data(raw_data)
         
         # Save formatted data
         save_formatted_data(formatted_data, timestamp)
